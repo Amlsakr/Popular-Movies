@@ -1,7 +1,10 @@
 package com.example.popularmovies.domain.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Movie(
     var backdropPath: String, // /y5Z0WesTjvn59jP6yo459eUsbli.jpg
     var id: String, // 663712
@@ -11,5 +14,5 @@ data class Movie(
     var title: String, // Terrifier 2
     var voteAverage: String, // 7.1
 
-)
+):Parcelable
 

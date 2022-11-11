@@ -8,22 +8,26 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
+import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.popularmovies.common.utill.Constant
 import com.example.popularmovies.common.state.UiState
 import com.example.popularmovies.common.views.EndlessScrollListener
 import com.example.popularmovies.databinding.FragmentMoviesListBinding
+import com.example.popularmovies.domain.model.Movie
 import com.example.popularmovies.ui.viewmodels.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 
 
 @AndroidEntryPoint
-class MoviesListFragment : Fragment() {
+class MoviesListFragment : Fragment(),MovieAdapter.MovieClickListener {
 lateinit var binding: FragmentMoviesListBinding
 private val viewModel by viewModels<HomeViewModel> ()
     private lateinit var movieAdapter: MovieAdapter
     private lateinit var linearLayoutManager: LinearLayoutManager
+    private val navController: NavController by lazy { findNavController() }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -59,7 +63,7 @@ private val viewModel by viewModels<HomeViewModel> ()
     private fun setupMoviesRecyclerView() = binding.rvPhotos.apply {
         layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false).also { linearLayoutManager = it }
         setHasFixedSize(true)
-        movieAdapter = MovieAdapter()
+        movieAdapter = MovieAdapter(this@MoviesListFragment)
         adapter = movieAdapter
         addOnScrollListener(
             object :EndlessScrollListener(linearLayoutManager , Constant.PAGE_SIZE){
@@ -91,6 +95,14 @@ private val viewModel by viewModels<HomeViewModel> ()
                 else -> Unit
             }
         }
+    }
+
+    override fun onMovieClick(position: Int, movie: Movie) {
+        navController.navigate(
+            MoviesListFragmentDirections.actionMoviesListFragmentToMovieDetailsFragment(
+                movie
+            )
+        )
     }
 
 

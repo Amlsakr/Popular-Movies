@@ -10,7 +10,9 @@ import com.example.popularmovies.common.utill.Constant
 import com.example.popularmovies.databinding.MovieItemBinding
 import com.example.popularmovies.domain.model.Movie
 
-class MovieAdapter () :
+class MovieAdapter (
+    val listener: MovieClickListener
+        ) :
     ListAdapter<Any, RecyclerView.ViewHolder>(MoviesDiffCallback){
 
 
@@ -52,7 +54,17 @@ class MovieAdapter () :
                     .load(Constant.IMAGE_URL +movie.backdropPath)
                     .into(binding.movieIV)
                 movieTitleTV.text = movie.title
+
+                root.setOnClickListener {
+                    listener.onMovieClick(bindingAdapterPosition ,movie)
+                }
             }
+
+
         }
+
+    interface MovieClickListener {
+        fun onMovieClick(position: Int, movie: Movie)
+    }
 
 }
