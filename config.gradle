@@ -20,7 +20,7 @@ ext {
     def constraint_layout = "2.1.4"
     def coordinator_layout = "1.2.0"
     def material = "1.6.1"
-    def core_ktx = "1.9.0"
+    def core_ktx = "1.8.0"
     def kotlin_coroutines = "1.6.1"
     def lifecycle_version = "2.5.1"
     def room_version = "2.4.3"

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginStart="@dimen/_6dp"
+    android:layout_marginEnd="@dimen/_6dp"
+    app:cardCornerRadius="@dimen/_8dp"
+    app:cardBackgroundColor="#636363"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/movieIV"
+        android:layout_width="180dp"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/ic_baseline_movie_24" />
+
+    <TextView
+        android:id="@+id/movieTitleTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+android:layout_marginBottom="@dimen/_8dp"
+        app:layout_constraintBottom_toTopOf="@+id/movieRateTV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+  />
+
+    <TextView
+        android:id="@+id/movieRateTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="7.4"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="@dimen/_8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/movieIV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

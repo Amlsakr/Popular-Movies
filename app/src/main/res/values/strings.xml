@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Popular Movies</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="try_again">Try again</string>
+    <string name="server_error">Ops, We can\'t Load data!</string>
 </resources>
