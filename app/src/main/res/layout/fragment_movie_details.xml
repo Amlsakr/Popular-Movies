@@ -11,8 +11,9 @@
 
     <ImageView
         android:id="@+id/movieIV"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_width="0dp"
+        android:layout_height="180dp"
+        android:scaleType="centerCrop"
         android:src="@drawable/ic_baseline_movie_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
