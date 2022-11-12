@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -61,7 +62,7 @@ private val viewModel by viewModels<HomeViewModel> ()
 
 
     private fun setupMoviesRecyclerView() = binding.rvPhotos.apply {
-        layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false).also { linearLayoutManager = it }
+        layoutManager = GridLayoutManager(requireContext() ,2).also { linearLayoutManager = it }
         setHasFixedSize(true)
         movieAdapter = MovieAdapter(this@MoviesListFragment)
         adapter = movieAdapter

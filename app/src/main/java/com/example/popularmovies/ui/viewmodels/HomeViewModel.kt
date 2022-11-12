@@ -25,7 +25,7 @@ class HomeViewModel @Inject constructor(
     private val _movieListState = MutableLiveData<UiState<List<Movie>>>(UiState.Init())
     val movieListState: LiveData<UiState<List<Movie>>> = _movieListState
 
-    private var nextPage = Constant.START_PAGE
+  //  private var nextPage = Constant.START_PAGE
     private var moviesList: MutableList<Movie> = mutableListOf()
 
     val isLoading: Boolean
@@ -34,17 +34,17 @@ class HomeViewModel @Inject constructor(
     var isLastPage: Boolean = false
 
     init {
-        loadMovies(nextPage)
+        loadMovies()
     }
 
-    fun loadMovies(page:Int = nextPage) {
+    fun loadMovies(page:Int = 1) {
 
         getMovieUseCase(page)
             .onStart {
                 _movieListState.value =  if (page == Constant.START_PAGE) UiState.Loading() else UiState.LoadMore()
             }.map {
                 if (page != Constant.START_PAGE && it.isEmpty()) isLastPage = true
-                nextPage++
+               // nextPage++
                 moviesList.addAll(it)
                 moviesList.toList()
             }.map {
@@ -69,7 +69,7 @@ class HomeViewModel @Inject constructor(
 
 
     fun resetList() {
-        nextPage = Constant.START_PAGE
+      //  nextPage = Constant.START_PAGE
         moviesList.clear()
     }
 }

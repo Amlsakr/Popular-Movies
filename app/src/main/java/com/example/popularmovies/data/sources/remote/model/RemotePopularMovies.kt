@@ -10,7 +10,7 @@ data class RemotePopularMovies(
     @SerializedName("page")
     var page: Int? = null, // 1
     @SerializedName("results")
-    var results: List<RemoteMovie> = ArrayList<RemoteMovie>(),
+    var results: List<RemoteMovie>? = null,
     @SerializedName("total_pages")
     var totalPages: Int? = null, // 35820
     @SerializedName("total_results")
