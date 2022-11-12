@@ -15,5 +15,5 @@ interface MoviesLocalSource {
 }
 interface MoviesRemoteSource {
 
-    fun getMoviesList(page:Int):Flow<List<RemoteMovie>>
+    fun getMoviesList(page:Int):Flow<List<RemoteMovie>?>
 }

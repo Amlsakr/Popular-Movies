@@ -14,7 +14,7 @@ class MoviesRemoteSourceImp @Inject constructor(
     private val moviesApiService: MoviesApiService,
     @IoDispatcher private val ioDispatcher:CoroutineDispatcher
 ) :MoviesRemoteSource{
-    override fun getMoviesList(page:Int): Flow<List<RemoteMovie>> = flow {
+    override fun getMoviesList(page:Int): Flow<List<RemoteMovie>?> = flow {
         emit(moviesApiService.getPopularMovies(page = page).results)
     }.flowOn(ioDispatcher)
 }

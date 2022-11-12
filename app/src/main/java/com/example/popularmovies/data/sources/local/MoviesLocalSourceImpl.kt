@@ -1,5 +1,6 @@
 package com.example.popularmovies.data.sources.local
 
+import com.example.popularmovies.common.utill.SessionManager
 import com.example.popularmovies.data.sources.MoviesLocalSource
 import com.example.popularmovies.data.sources.local.dao.MoviesDao
 import com.example.popularmovies.data.sources.local.model.MovieEntity
@@ -13,13 +14,16 @@ import javax.inject.Inject
 
 class MoviesLocalSourceImpl @Inject constructor(
     private val moviesDao: MoviesDao ,
-    @IoDispatcher private val ioDispatcher: CoroutineDispatcher
+    @IoDispatcher private val ioDispatcher: CoroutineDispatcher,
+
+
 ): MoviesLocalSource {
     override fun getMoviesList(): Flow<List<MovieEntity>> =
         flow{ emitAll(moviesDao.getMovieList())
     }.flowOn(ioDispatcher)
 
     override suspend fun updateMoviesList(list: List<MovieEntity>) {
+
         moviesDao.updateMovieList(list)
     }
 
