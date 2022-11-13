@@ -1,12 +1,16 @@
 # Popular-Movies
 Simple app display popular movies from The movie db public API "https://developers.themoviedb.org/3/getting-started/introduction"
-#Architecture
+# Architecture
 Clean architecture based on MVVM (Model-View-ViewModel) with Kotlin Coroutines and Flow
 
 The following diagram shows all the layers and how each layer interacts with each other. This architecture uses a layered software architecture.
 ![alt text](https://github.com/mhelmi/WeatherForecast/blob/master/art/mvvm_architecture.png)
 
-Built With 🛠
+# Video   "https://www.youtube.com/shorts/2m0elkchM88"
+![alt text](https://drive.google.com/file/d/1noKZxll9p_smMu6DdAQlxWT2u9FDiDwO/view?usp=share_link)
+![alt text](https://drive.google.com/file/d/19owvVwdZAPxVclBNqF1Noj6NZ8O6i84G/view?usp=sharing)
+
+# Built With 🛠
 
 Kotlin - official programming language for Android development.
 Coroutines - for asynchronous or non-blocking programming.
