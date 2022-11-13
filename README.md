@@ -7,8 +7,8 @@ The following diagram shows all the layers and how each layer interacts with eac
 ![alt text](https://github.com/mhelmi/WeatherForecast/blob/master/art/mvvm_architecture.png)
 
 # Video   "https://www.youtube.com/shorts/2m0elkchM88"
-![alt text](https://drive.google.com/file/d/1noKZxll9p_smMu6DdAQlxWT2u9FDiDwO/view?usp=share_link)
-![alt text](https://drive.google.com/file/d/19owvVwdZAPxVclBNqF1Noj6NZ8O6i84G/view?usp=sharing)
+![alt text](https://github.com/Amlsakr/Popular-Movies/blob/master/movie_list.jpeg)
+![alt text](https://github.com/Amlsakr/Popular-Movies/blob/master/movie_details.jpeg)
 
 # Built With 🛠
 
